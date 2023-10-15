@@ -8,6 +8,23 @@
     <main>
         <h1>Convert from Fahrenheit to Celsius</h1>
         <script>
+            "use strict";
+            while (1) {
+            const fahr = parseFloat(prompt("Enter Fahrenheit Temperature"));
+            if (fahr>=999) {
+                break;
+            }
+            if(fahr <= -100 || fahr >= 212){
+                alert("You entered " + fahr +".\n" + "Entry must range from -100 to +212.")
+            }
+
+            const celsuis = parseFloat((fahr - 32) * (5 / 9));
+
+            const html = '<p>'+ fahr.toFixed(1) + ' F = ' + celsuis.toFixed(1) +' C</p>';
+
+            //document.write(fahr + ' F = ' + celsuis + ' C\n' + "\n");
+            document.write(html)
+            }
 
         </script>
     </main>

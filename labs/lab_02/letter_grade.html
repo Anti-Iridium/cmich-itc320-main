@@ -9,6 +9,61 @@
     <main>
         <h1>Show letter grade</h1>
         <script>
+            "use strict";
+            while (1) 
+            {
+                let lettergrade = " ";
+                const grade = parseInt(prompt("Enter number grade from 0 through 100\nOr enter 999 to end entries"));
+                if (isNaN(grade) || grade > 1000) 
+                {
+                    continue;
+                }
+                if (grade < 0 || grade == 999) {
+                    break;
+                }
+                else if (grade >= 94 && grade <= 250) {
+                    lettergrade = "A";
+                }
+                else if (grade >= 90 && grade < 94) {
+                    lettergrade = "A-";
+                }
+                else if (grade >= 87 && grade < 90) {
+                    lettergrade = "B+";
+                }
+                else if (grade >= 84 && grade < 87) {
+                    lettergrade = "B";
+                }
+                else if (grade >= 80 && grade < 84) {
+                    lettergrade = "B-";
+                }
+                else if (grade >= 77 && grade < 80) {
+                    lettergrade = "C+";
+                }
+                else if (grade >= 74 && grade < 77) {
+                    lettergrade = "C";
+                }
+                else if (grade >= 70 && grade < 74) {
+                    lettergrade = "C-";
+                }
+                else if (grade >= 67 && grade < 70) {
+                    lettergrade = "D+";
+                }
+                else if (grade >= 64 && grade < 67) {
+                    lettergrade = "D";
+                }
+                else if (grade >= 60 && grade < 64) {
+                    lettergrade = "D-";
+                }
+                else if (grade < 60) {
+                    lettergrade = "E";
+                }
+                else {
+                    lettergrade = "NA"
+                }
+                const html = '<p>Grade '+ grade + ' = ' + lettergrade +'</p>';
+                document.write(html);
+
+            }
 
         </script>
     </main>

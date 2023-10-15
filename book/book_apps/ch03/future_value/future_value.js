@@ -28,8 +28,23 @@ for (let i = 1; i <= years; i++ ) {
     futureValue += futureValue * rate / 100;
 }
 
+let futureCompound = investment;
+for (let i = 1; i <= years*12; i++ ) {
+    futureCompound += futureCompound * (rate/12) / 100;
+}
+
+/*let futureCompound = investment;
+for (let i = 1; i <= years; i++) {
+    futureCompound += futureCompound * (1 + (rate / 12)) ^ (12 * years);
+}
+*/
 // display results
 document.write(`<p><label>Investment amount:</label> ${investment}</p>`);
 document.write(`<p><label>Interest rate:</label> ${rate}</p>`);
 document.write(`<p><label>Years:</label> ${years}</p>`);
 document.write(`<p><label>Future Value:</label> ${futureValue.toFixed(2)}</p>`);
+
+document.write(`<p><label>Investment amount:</label> ${investment}</p>`);
+document.write(`<p><label>Interest rate:</label> ${rate}</p>`);
+document.write(`<p><label>Years:</label> ${years}</p>`);
+document.write(`<p><label>Future Value(compounded):</label> ${futureCompound.toFixed(2)}</p>`);
