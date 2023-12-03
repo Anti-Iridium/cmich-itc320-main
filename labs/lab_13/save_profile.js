@@ -54,6 +54,11 @@ $(document).ready( () => {
         
         if (isValid) { 
             // code that saves profile info goes here
+            sessionStorage.setItem("userEmail",email);
+            sessionStorage.setItem("userPhone",phone);
+            sessionStorage.setItem("userZip",zip);
+            sessionStorage.setItem("userDOB",dob);
+            location.href = "profile.html";
         }
         
         $("#email").focus(); 

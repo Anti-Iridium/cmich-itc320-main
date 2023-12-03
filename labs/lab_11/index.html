@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Reservation request</title>
+	<link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
 	<link rel="stylesheet" href="reservation.css">
 </head>
 	
@@ -11,8 +12,14 @@
 	<h1>Reservation Request</h1>
 	<form action="response.html" method="get"
     	name="reservation_form" id="reservation_form">
-		<fieldset>
-        	<legend>General Information</legend>
+		<div id = "tabs">
+			<ul>
+				<li><a href="#tabs-1">General Information</a></li>
+				<li><a href="#tabs-2">Preferences</a></li>
+				<li><a href="#tabs-3">Contact Information</a></li>
+			</ul>
+		<div id = 'tabs-1'>
+        	<label>General Information</label>
         	<div>
 				<label for="arrival_date">Arrival date:</label>
 				<input type="text" name="arrival_date" id="arrival_date" autofocus>
@@ -42,9 +49,9 @@
 					<option value="4">4</option>        		        		        		
 				</select>
 			</div>     	
-		</fieldset>
-		<fieldset>
-        	<legend>Preferences</legend>
+		</div>
+		<div id = "tabs-2">
+        	<label>Preferences</label>
         	<div>
 				<label>Room type:</label>
 				<input type="radio" name="room" id="standard" class="left" checked>Standard	        	
@@ -59,9 +66,10 @@
 			<div>
 				<input type="checkbox" name="smoking" id="smoking">Smoking
 			</div>
-		</fieldset>		
-		<fieldset>
-    		<legend>Contact Information</legend>
+		</div>		
+		<div id = 'tabs-3'>
+    		<label>Contact Information</label>
+			
     		<div>
 				<label for="name">Name:</label>
 				<input type="text" name="name" id="name">
@@ -78,6 +86,7 @@
 				<span>*</span>
 			</div>
 		</fieldset>
+	</div>
     	<fieldset>
 			<div>
 				<input type="button" id="policies" value="View Cancellation Policies">
@@ -94,6 +103,7 @@
     	</fieldset>
 	</form>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 	<script src="reservation.js"></script>
 </body>
 </html>

@@ -15,7 +15,23 @@ $(document).ready( () => {
         $("#password").val( "" ); // clear previous entry
     
         const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_-+!@";
-        
+        let numOfCharacters = $("#num").val().trim();
+        if(isNaN(numOfCharacters)){
+            alert("Please enter a number");
+        }
+        if(numOfCharacters < 1){
+            alert("Please enter a positve number")
+        }
+
+        else {
+            let password = "";
+
+            for(let i = 0; i < numOfCharacters; i++) {
+                password = password += chars.charAt(getRandomNumber(chars.length));
+            }
+
+            $("#password").val(password);
+        }
     }); // end click()
     
     $("#clear").click( () => {

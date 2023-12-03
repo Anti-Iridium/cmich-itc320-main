@@ -6,8 +6,17 @@ $(document).ready( () => {
 	// move the focus to the first text box
 	$("#arrival_date").focus();
 	
+	$("#tabs").tabs();
+	$("#arrival_date").datepicker({minDate: 0, maxDate: "+90D"});
+
+	$("#policies").on("click", () => {
+		$("#dialog").dialog();
+	});
+
 	// the handler for the submit event of the form
 	// executed when the submit button is clicked
+
+
 	$("#reservation_form").submit( evt => {
 			let isValid = true;
 			
